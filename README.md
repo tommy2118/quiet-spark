@@ -83,7 +83,6 @@ When you push to GitHub, the workflow will:
 4. Build the project
 5. Deploy the built files to GitHub Pages
 
-Your site will be available at `https://yourusername.github.io/quiet-spark/`
 
 ## License
 
