@@ -15,10 +15,11 @@ A static website built with TailwindCSS to showcase the story "The Quiet Spark".
 
 ```
 quiet-spark/
-├── dist/               # Compiled assets
-│   ├── css/            # Compiled CSS
-│   ├── js/             # JavaScript files
-│   └── index.html      # Main HTML file
+├── index.html          # Main HTML file (built)
+├── css/                # Compiled CSS directory
+│   └── styles.css      # Compiled CSS file
+├── js/                 # JavaScript files directory
+│   └── main.js         # Main JavaScript file
 ├── src/                # Source files
 │   ├── css/            # CSS source files
 │   │   └── tailwind.css  # Tailwind CSS source
@@ -68,48 +69,21 @@ npm run build
 3. Enable GitHub Pages in the repository settings:
    - Go to Settings > Pages
    - Select 'main' as the source branch
-   - Select '/docs' or '/dist' as the folder (depending on your setup)
+   - Select '/' (root) as the folder
    - Click Save
 
-Alternatively, you can use the GitHub Pages workflow:
+The repository is already set up with a GitHub Actions workflow that will automatically deploy the site when you push to the main branch. The workflow file is located at `.github/workflows/deploy-to-github-pages.yml`.
 
-1. Create a `.github/workflows/deploy.yml` file with the following content:
+The build process is configured to output the compiled files to the root directory, making it compatible with GitHub Pages deployment. This makes it easy to set up GitHub Pages to serve directly from your main branch.
 
-```yaml
-name: Deploy to GitHub Pages
+When you push to GitHub, the workflow will:
+1. Check out your code
+2. Set up Node.js
+3. Install dependencies
+4. Build the project
+5. Deploy the built files to GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: dist
-```
-
-2. Push this file to GitHub
-3. GitHub Actions will build and deploy your site to the gh-pages branch
+Your site will be available at `https://yourusername.github.io/quiet-spark/`
 
 ## License
 

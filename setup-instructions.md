@@ -8,10 +8,11 @@ We've created a static website using TailwindCSS for "The Quiet Spark" story wit
 quiet-spark/
 ├── .github/               # GitHub configurations
 │   └── workflows/         # GitHub Actions workflows
-├── dist/                  # Compiled assets (deployment ready)
-│   ├── css/               # Compiled CSS
-│   ├── js/                # JavaScript files
-│   └── index.html         # Main HTML file
+├── index.html             # Main HTML file (built)
+├── css/                   # Compiled CSS directory
+│   └── styles.css         # Compiled CSS file
+├── js/                    # JavaScript files directory
+│   └── main.js            # Main JavaScript file
 ├── src/                   # Source files
 │   ├── css/               # CSS source files
 │   │   └── tailwind.css   # Tailwind CSS source
@@ -63,9 +64,17 @@ The project is ready to be deployed to GitHub Pages. Follow these steps:
    git push -u origin main
    ```
 
-3. GitHub Actions will automatically deploy the site to GitHub Pages when you push to the main branch.
+3. Go to your repository settings on GitHub:
+   - Navigate to "Settings" > "Pages"
+   - For "Source", select "Deploy from a branch"
+   - For "Branch", select "main" and "/" (root)
+   - Click "Save"
 
-4. Go to your repository settings on GitHub and check the "Pages" section to find the URL of your deployed site.
+4. GitHub will deploy your site and provide a URL like `https://yourusername.github.io/quiet-spark/`
+
+The build process has been configured to output the compiled files directly to the root directory, which makes it compatible with GitHub Pages. The built files (index.html, css/styles.css, js/main.js) are committed to the repository, so GitHub Pages can serve them directly.
+
+Alternatively, the repository is also set up with a GitHub Actions workflow that will automatically build and deploy the site when you push changes. This is handled by the `.github/workflows/deploy-to-github-pages.yml` file.
 
 ## Local Development
 

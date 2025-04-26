@@ -7,7 +7,7 @@ package-lock.json
 yarn.lock
 
 # Build files
-# Note: We're not ignoring the dist directory since we'll be deploying from it to GitHub Pages
+# Do not ignore css, js, and index.html at the root level as we need these for GitHub Pages
 
 # Editor directories and files
 .idea/
