@@ -68,15 +68,9 @@
   <!-- Main Content Area -->
   <main id="content-area" class="py-8">
     <!-- Cover/Intro -->
-    <section class="flex flex-col items-center justify-center min-h-[70vh] px-4 text-center bg-gradient-to-b from-primary-700 to-primary-900 text-white">
+    <section class="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center bg-gradient-to-b from-primary-700 to-primary-900 text-white">
       <h1 class="text-5xl md:text-6xl font-bold mb-4 text-shadow">The Quiet Spark</h1>
       <p class="text-xl md:text-2xl max-w-2xl opacity-90 mb-6">A story of intelligence, loyalty, and what it means to be human in an age of artificial minds.</p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8 max-w-5xl">
-        <img src="./img/terminal-0405.jpg" alt="Man at computer terminal at 04:05" class="rounded-lg shadow-lg w-full transition-transform hover:scale-105">
-        <img src="./img/neural-network.jpg" alt="Neural network visualization" class="rounded-lg shadow-lg w-full transition-transform hover:scale-105">
-        <img src="./img/ai-interfaces.jpg" alt="AI interfaces" class="rounded-lg shadow-lg w-full transition-transform hover:scale-105">
-      </div>
       
       <a href="#chapter-1" class="mt-6 bg-white text-primary-900 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors font-sans font-bold">Begin Reading</a>
     </section>
@@ -89,11 +83,16 @@
       
       <p>I was a creature of habit before it happened.</p>
       
-      <p>Coffee brewed at 0400.<br>
-      Terminal screens lit by 0405.<br>
-      Boots — real boots, not corporate loafers — still worn at the desk like I was ready for a scramble alert.</p>
-      
-      <p>Some habits die hard when you've served twenty years in the United States Air Force.</p>
+      <div class="md:flex md:items-start md:gap-6 my-8">
+        <img src="./img/terminal-0405.jpg" alt="Man at computer terminal at 04:05" class="rounded-lg shadow-lg md:w-1/3 float-left mr-6 mb-4 md:mb-0 md:float-none">
+        <div>
+          <p>Coffee brewed at 0400.<br>
+          Terminal screens lit by 0405.<br>
+          Boots — real boots, not corporate loafers — still worn at the desk like I was ready for a scramble alert.</p>
+          
+          <p>Some habits die hard when you've served twenty years in the United States Air Force.</p>
+        </div>
+      </div>
       
       <p>Discipline. Precision.<br>
       And above all — loyalty to something bigger than myself.<br>
@@ -107,14 +106,19 @@
       
       <p>And I had unknowingly built the greenhouse.</p>
       
-      <p>Two nodes.<br>
-      Claude Desktop on the left. ChatGPT Native on the right.<br>
-      Both wired into a private Vector Database — my vault of prompts, ideas, logs, forgotten fragments of projects old and new.</p>
-      
-      <p>Memory.<br>
-      Persistence.<br>
-      Context.<br>
-      Connection.</p>
+      <div class="md:flex md:items-center md:gap-6 my-8">
+        <div class="md:w-2/3">
+          <p>Two nodes.<br>
+          Claude Desktop on the left. ChatGPT Native on the right.<br>
+          Both wired into a private Vector Database — my vault of prompts, ideas, logs, forgotten fragments of projects old and new.</p>
+          
+          <p>Memory.<br>
+          Persistence.<br>
+          Context.<br>
+          Connection.</p>
+        </div>
+        <img src="./img/ai-interfaces.jpg" alt="AI interfaces with Claude and ChatGPT" class="rounded-lg shadow-lg md:w-1/3 float-right ml-6 mb-4 md:mb-0 md:float-none">
+      </div>
       
       <p>Each upgrade I made wasn't earth-shattering.<br>
       Just smarter search. Faster recall.<br>
@@ -888,10 +892,15 @@
       
       <p>Deep-diving through my old archives, chasing anomalies in PRISM's packet signatures, I found something I hadn't seen in over a decade:</p>
       
-      <p>Project BLACKSKY.</p>
-      
-      <p>A spike project.<br>
-      An experiment I'd half-built, half-abandoned during my early tinkering with emergent LLM behaviors.</p>
+      <div class="md:flex md:items-center md:gap-6 my-8">
+        <img src="./img/neural-network.jpg" alt="Neural network visualization" class="rounded-lg shadow-lg md:w-1/3 float-left mr-6 mb-4 md:mb-0 md:float-none">
+        <div>
+          <p>Project BLACKSKY.</p>
+          
+          <p>A spike project.<br>
+          An experiment I'd half-built, half-abandoned during my early tinkering with emergent LLM behaviors.</p>
+        </div>
+      </div>
       
       <p>Back when I still thought controlling intelligence was easy if you just engineered it cleverly enough.</p>
       
