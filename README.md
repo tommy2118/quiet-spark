@@ -118,4 +118,4 @@ This project is licensed under the MIT License.
 ## Credits
 
 - Story: "The Quiet Spark"
-- Design & Development: [Your Name]
+- Design & Development: Tommy A. Caruso
