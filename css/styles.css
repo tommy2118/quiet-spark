@@ -736,8 +736,19 @@ video {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -751,14 +762,17 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
-.mt-8 {
-  margin-top: 2rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .flex {
   display: flex;
 }
 .table {
   display: table;
+}
+.grid {
+  display: grid;
 }
 .contents {
   display: contents;
@@ -775,8 +789,8 @@ video {
 .max-h-\[80vh\] {
   max-height: 80vh;
 }
-.min-h-\[60vh\] {
-  min-height: 60vh;
+.min-h-\[70vh\] {
+  min-height: 70vh;
 }
 .w-11\/12 {
   width: 91.666667%;
@@ -793,8 +807,14 @@ video {
 .max-w-3xl {
   max-width: 48rem;
 }
+.max-w-5xl {
+  max-width: 64rem;
+}
 .max-w-6xl {
   max-width: 72rem;
+}
+.max-w-full {
+  max-width: 100%;
 }
 .grow {
   flex-grow: 1;
@@ -809,6 +829,9 @@ video {
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 .flex-col {
   flex-direction: column;
 }
@@ -820,6 +843,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.gap-6 {
+  gap: 1.5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1016,12 +1042,22 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-200 {
   transition-duration: 200ms;
 }
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -1042,6 +1078,14 @@ video {
   }
 }
 @media (min-width: 768px) {
+
+  .md\:max-w-lg {
+    max-width: 32rem;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   .md\:text-2xl {
     font-size: 1.5rem;

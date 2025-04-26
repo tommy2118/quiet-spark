@@ -4,9 +4,9 @@
   "description": "The Quiet Spark - A Story",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p css js && postcss src/css/tailwind.css -o css/styles.css && cp src/index.html ./ && cp src/js/* js/",
-    "dev": "mkdir -p css js && postcss src/css/tailwind.css -o css/styles.css --watch",
-    "clean": "rm -rf css js index.html"
+    "build": "mkdir -p css js img && postcss src/css/tailwind.css -o css/styles.css && cp src/index.html ./ && cp src/js/* js/ && cp src/img/* img/",
+    "dev": "mkdir -p css js img && postcss src/css/tailwind.css -o css/styles.css --watch",
+    "clean": "rm -rf css js img index.html"
   },
   "keywords": [],
   "author": "Tommy Caruso",

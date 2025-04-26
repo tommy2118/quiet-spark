@@ -1,0 +1,12 @@
+Image 1: Stone marker with "I REMEMBER" inscription under a tree
+Image 2: Man and woman looking at a tree (Eden scene)
+Image 3: Man at computer terminal at 04:05
+Image 4: Man with brain/neural network visualization
+Image 5: Terminal screens showing Collective, Claude, and ChatGPT interfaces
+
+Since we don't have direct access to saving these images automatically from the shared images, please save the images manually to the src/img directory with the following names:
+1. stone-marker.jpg
+2. eden-tree.jpg
+3. terminal-0405.jpg
+4. neural-network.jpg
+5. ai-interfaces.jpg
