@@ -5,18 +5,105 @@ document.addEventListener('DOMContentLoaded', () => {
   const tocButton = document.getElementById('toc-button');
   const tableOfContents = document.getElementById('table-of-contents');
   
+  // Smooth Scrolling for All Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        // Smooth scroll with enhanced easing
+        targetElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Update URL without page jump
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
+  
+  // Parallax Effects for Images
+  const parallaxElements = document.querySelectorAll('.eden-tree-img, .stone-marker-img');
+  
+  function handleParallax() {
+    parallaxElements.forEach(img => {
+      const scrollPosition = window.pageYOffset;
+      const imgPosition = img.getBoundingClientRect().top + scrollPosition;
+      const offset = scrollPosition - imgPosition;
+      
+      // Only apply effect when the image is in view
+      if (img.getBoundingClientRect().top < window.innerHeight && 
+          img.getBoundingClientRect().bottom > 0) {
+        // Subtle parallax effect
+        const parallaxOffset = offset * 0.05;
+        img.style.transform = `translateY(${parallaxOffset}px)`;
+      }
+    });
+  }
+  
+  // Initialize parallax and set up event listener
+  window.addEventListener('scroll', handleParallax);
+  handleParallax(); // Initial call
+  
+  // Add Classes to Special Images
+  document.querySelectorAll('img[src*="eden-tree"]').forEach(img => {
+    img.classList.add('eden-tree-img', 'transition-transform', 'duration-1000');
+  });
+  
+  document.querySelectorAll('img[src*="stone-marker"]').forEach(img => {
+    img.classList.add('stone-marker-img', 'transition-transform', 'duration-1000');
+  });
+  
+  // Section Transition Effects for Dividers
+  const dividers = document.querySelectorAll('.divider');
+  
+  function handleDividerEffects() {
+    dividers.forEach(divider => {
+      const dividerPosition = divider.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (dividerPosition < windowHeight - 100) {
+        divider.classList.add('opacity-100');
+        divider.classList.remove('opacity-0');
+      }
+    });
+  }
+  
+  // Add initial opacity class
+  dividers.forEach(divider => {
+    divider.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
+  });
+  
+  // Monitor scrolling for effects
+  window.addEventListener('scroll', handleDividerEffects);
+  handleDividerEffects(); // Initial call
+  
   // Table of contents functionality
   if (tocButton && tableOfContents) {
     // Toggle table of contents
     tocButton.addEventListener('click', () => {
       tableOfContents.classList.toggle('hidden');
+      
+      // Fade in effect when showing
+      if (!tableOfContents.classList.contains('hidden')) {
+        tableOfContents.style.opacity = '0';
+        setTimeout(() => {
+          tableOfContents.style.opacity = '1';
+        }, 10);
+      }
     });
     
     // Close when clicking the close button
     const closeButton = document.getElementById('close-toc');
     if (closeButton) {
       closeButton.addEventListener('click', () => {
-        tableOfContents.classList.add('hidden');
+        tableOfContents.style.opacity = '0';
+        setTimeout(() => {
+          tableOfContents.classList.add('hidden');
+        }, 300);
       });
     }
     
@@ -24,7 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const tocBackdrop = document.getElementById('toc-backdrop');
     if (tocBackdrop) {
       tocBackdrop.addEventListener('click', () => {
-        tableOfContents.classList.add('hidden');
+        tableOfContents.style.opacity = '0';
+        setTimeout(() => {
+          tableOfContents.classList.add('hidden');
+        }, 300);
       });
     }
     
@@ -32,7 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const tocLinks = document.querySelectorAll('.toc-link');
     tocLinks.forEach(link => {
       link.addEventListener('click', () => {
-        tableOfContents.classList.add('hidden');
+        tableOfContents.style.opacity = '0';
+        setTimeout(() => {
+          tableOfContents.classList.add('hidden');
+        }, 300);
       });
     });
   }
