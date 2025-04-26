@@ -1,0 +1,20 @@
+{
+  "name": "quiet-spark",
+  "version": "1.0.0",
+  "description": "The Quiet Spark - A Story",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss src/css/tailwind.css -o dist/css/styles.css && cp src/index.html dist/ && cp src/js/* dist/js/",
+    "dev": "postcss src/css/tailwind.css -o dist/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "Tommy Caruso",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "type": "commonjs"
+}

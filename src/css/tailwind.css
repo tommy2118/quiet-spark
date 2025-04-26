@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl text-primary-700;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply my-4;
+  }
+}
+
+@layer components {
+  .chapter {
+    @apply max-w-3xl mx-auto px-4 sm:px-6 py-8;
+  }
+  
+  .chapter-heading {
+    @apply text-center mb-8 border-b pb-2 border-gray-200;
+  }
+
+  .divider {
+    @apply my-8 text-center;
+  }
+
+  .divider::before {
+    content: "* * *";
+    @apply text-gray-400 text-xl;
+  }
+  
+  .nav-button {
+    @apply py-2 px-4 rounded bg-primary-600 hover:bg-primary-700 text-white transition-colors;
+  }
+  
+  .table-of-contents {
+    @apply p-4 bg-gray-100 rounded-lg;
+  }
+  
+  .toc-link {
+    @apply text-primary-600 hover:text-primary-800 hover:underline transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
