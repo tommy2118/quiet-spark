@@ -16,25 +16,19 @@ if [ ! -d "$SOURCE_DIR" ]; then
   exit 1
 fi
 
-# Function to detect image number and return destination filename
-get_dest_filename() {
+# Direct mapping of source filenames to destination filenames
+map_filename() {
   local filename="$1"
-  filename=$(basename "$filename" | tr '[:upper:]' '[:lower:]')
+  filename=$(basename "$filename")
   
-  # Try to detect the image number using various patterns
-  if [[ "$filename" == *"image"*"1"* || "$filename" == *"stone"* || "$filename" == *"marker"* || "$filename" == *"remember"* ]]; then
-    echo "stone-marker.jpg"
-  elif [[ "$filename" == *"image"*"2"* || "$filename" == *"eden"* || "$filename" == *"tree"* || "$filename" == *"man"*"woman"* ]]; then
-    echo "eden-tree.jpg"
-  elif [[ "$filename" == *"image"*"3"* || "$filename" == *"terminal"* || "$filename" == *"0405"* || "$filename" == *"computer"* ]]; then
-    echo "terminal-0405.jpg"
-  elif [[ "$filename" == *"image"*"4"* || "$filename" == *"neural"* || "$filename" == *"brain"* || "$filename" == *"network"* ]]; then
-    echo "neural-network.jpg"
-  elif [[ "$filename" == *"image"*"5"* || "$filename" == *"interface"* || "$filename" == *"claude"* || "$filename" == *"chatgpt"* || "$filename" == *"collective"* ]]; then
-    echo "ai-interfaces.jpg"
-  else
-    echo "" # Not matched
-  fi
+  case "$filename" in
+    "i_remember.png") echo "stone-marker.jpg" ;;
+    "eden.png") echo "eden-tree.jpg" ;;
+    "early_morning.png") echo "terminal-0405.jpg" ;;
+    "upgrades.png") echo "neural-network.jpg" ;;
+    "llms_connected.png") echo "ai-interfaces.jpg" ;;
+    *) echo "" ;; # Not matched
+  esac
 }
 
 # Copy files
@@ -48,7 +42,7 @@ for src_file in "$SOURCE_DIR"/*; do
   fi
   
   # Get destination filename
-  dest_file=$(get_dest_filename "$src_file")
+  dest_file=$(map_filename "$src_file")
   
   if [[ -n "$dest_file" ]]; then
     # Copy to src directory
@@ -73,10 +67,10 @@ fi
 echo "You may now need to rebuild the site with 'npm run build'"
 echo ""
 echo "Image assignments:"
-echo "1. stone-marker.jpg - Stone with 'I REMEMBER' inscription - placed in Future Glimpse section"
-echo "2. eden-tree.jpg - Eden scene with man and woman - placed in Chapter 11 (Echoes in the Dust)"
-echo "3. terminal-0405.jpg - Man at computer terminal - placed in header section"
-echo "4. neural-network.jpg - Man with brain visualization - placed in header section"
-echo "5. ai-interfaces.jpg - Terminal screens with AI interfaces - placed in header section"
+echo "i_remember.png → stone-marker.jpg - Stone with 'I REMEMBER' inscription - placed in Future Glimpse section"
+echo "eden.png → eden-tree.jpg - Eden scene with man and woman - placed in Chapter 11 (Echoes in the Dust)"
+echo "early_morning.png → terminal-0405.jpg - Man at computer terminal - placed in header section"
+echo "upgrades.png → neural-network.jpg - Man with brain visualization - placed in header section"
+echo "llms_connected.png → ai-interfaces.jpg - Terminal screens with AI interfaces - placed in header section"
 echo ""
 echo "If images aren't displaying properly, check that the file extensions match (.jpg)"
